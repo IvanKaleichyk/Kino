@@ -67,7 +67,7 @@ flutter:
         - asset: assets/fonts/SourceSansPro-Medium.ttf
         - asset: assets/fonts/SourceSansPro-Regular.ttf
         - asset: assets/fonts/SourceSansPro-Italic.ttf
-            style: italic
+          style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
