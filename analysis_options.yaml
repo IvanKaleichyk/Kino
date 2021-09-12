@@ -46,7 +46,6 @@ linter:
     - avoid_positional_boolean_parameters
     - flutter_style_todos
     - parameter_assignments
-    - prefer_double_quotes
     - prefer_expression_function_bodies
     - prefer_final_locals
     - prefer_foreach
