@@ -32,6 +32,9 @@ jobs:
     # Get flutter dependencies.
     - run: flutter pub get
     
+    # Generate classes
+    - run: flutter pub run build_runner build
+    
     # Statically analyze the Dart code for any errors.
     - run: flutter analyze .
     
