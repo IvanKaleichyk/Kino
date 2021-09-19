@@ -1,29 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'popular_page.dart';
+part of 'section.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PopularPage _$PopularPageFromJson(Map<String, dynamic> json) => PopularPage(
+Section _$SectionFromJson(Map<String, dynamic> json) => Section(
       json['page'] as int?,
       (json['results'] as List<dynamic>?)
-          ?.map((e) => PopularMovie.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
           .toList(),
       json['total_results'] as int?,
       json['total_pages'] as int?,
     );
 
-Map<String, dynamic> _$PopularPageToJson(PopularPage instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SectionToJson(Section instance) => <String, dynamic>{
       'page': instance.page,
       'results': instance.results,
       'total_results': instance.totalResults,
       'total_pages': instance.totalPages,
     };
 
-PopularMovie _$PopularMovieFromJson(Map<String, dynamic> json) => PopularMovie(
+Movie _$MovieFromJson(Map<String, dynamic> json) => Movie(
       json['poster_path'] as String?,
       json['adult'] as bool,
       json['overview'] as String?,
@@ -40,8 +39,7 @@ PopularMovie _$PopularMovieFromJson(Map<String, dynamic> json) => PopularMovie(
       (json['vote_average'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$PopularMovieToJson(PopularMovie instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$MovieToJson(Movie instance) => <String, dynamic>{
       'poster_path': instance.posterPath,
       'adult': instance.adult,
       'overview': instance.overview,

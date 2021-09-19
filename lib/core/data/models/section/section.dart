@@ -1,26 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'popular_page.g.dart';
+part 'section.g.dart';
 
 @immutable
 @JsonSerializable()
-class PopularPage {
+class Section {
   @JsonKey(name: "page")
   final int? page;
   @JsonKey(name: "results")
-  final List<PopularMovie>? results;
+  final List<Movie>? results;
   @JsonKey(name: "total_results")
   final int? totalResults;
   @JsonKey(name: "total_pages")
   final int? totalPages;
 
-  const PopularPage(this.page, this.results, this.totalResults, this.totalPages);
+  const Section(this.page, this.results, this.totalResults, this.totalPages);
 
-  factory PopularPage.fromJson(Map<String, dynamic> json) =>
-      _$PopularPageFromJson(json);
+  factory Section.fromJson(Map<String, dynamic> json) =>
+      _$SectionFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PopularPageToJson(this);
+  Map<String, dynamic> toJson() => _$SectionToJson(this);
 
   @override
   String toString() => 'PopularPage{page: $page, results: $results, totalResults: $totalResults, totalPages: $totalPages}';
@@ -28,12 +28,12 @@ class PopularPage {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PopularPage &&
-          runtimeType == other.runtimeType &&
-          page == other.page &&
-          results == other.results &&
-          totalResults == other.totalResults &&
-          totalPages == other.totalPages;
+          other is Section &&
+              runtimeType == other.runtimeType &&
+              page == other.page &&
+              results == other.results &&
+              totalResults == other.totalResults &&
+              totalPages == other.totalPages;
 
   @override
   int get hashCode =>
@@ -45,7 +45,7 @@ class PopularPage {
 
 @immutable
 @JsonSerializable()
-class PopularMovie {
+class Movie {
   @JsonKey(name: 'poster_path')
   final String? posterPath;
   @JsonKey(name: "adult")
@@ -75,7 +75,7 @@ class PopularMovie {
   @JsonKey(name: "vote_average")
   final double? voteAverage;
 
-  const PopularMovie(
+  const Movie(
       this.posterPath,
       this.adult,
       this.overview,
@@ -91,10 +91,10 @@ class PopularMovie {
       this.video,
       this.voteAverage);
 
-  factory PopularMovie.fromJson(Map<String, dynamic> json) =>
-      _$PopularMovieFromJson(json);
+  factory Movie.fromJson(Map<String, dynamic> json) =>
+      _$MovieFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PopularMovieToJson(this);
+  Map<String, dynamic> toJson() => _$MovieToJson(this);
 
   @override
   String toString() => 'PopularMovie{posterPath: $posterPath, adult: $adult, overview: $overview, releaseDate: $releaseDate, genreIds: $genreIds, id: $id, originalTitle: $originalTitle, originalLanguage: $originalLanguage, title: $title, backdropPath: $backdropPath, popularity: $popularity, voteCount: $voteCount, video: $video, voteAverage: $voteAverage}';
@@ -102,22 +102,22 @@ class PopularMovie {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PopularMovie &&
-          runtimeType == other.runtimeType &&
-          posterPath == other.posterPath &&
-          adult == other.adult &&
-          overview == other.overview &&
-          releaseDate == other.releaseDate &&
-          genreIds == other.genreIds &&
-          id == other.id &&
-          originalTitle == other.originalTitle &&
-          originalLanguage == other.originalLanguage &&
-          title == other.title &&
-          backdropPath == other.backdropPath &&
-          popularity == other.popularity &&
-          voteCount == other.voteCount &&
-          video == other.video &&
-          voteAverage == other.voteAverage;
+          other is Movie &&
+              runtimeType == other.runtimeType &&
+              posterPath == other.posterPath &&
+              adult == other.adult &&
+              overview == other.overview &&
+              releaseDate == other.releaseDate &&
+              genreIds == other.genreIds &&
+              id == other.id &&
+              originalTitle == other.originalTitle &&
+              originalLanguage == other.originalLanguage &&
+              title == other.title &&
+              backdropPath == other.backdropPath &&
+              popularity == other.popularity &&
+              voteCount == other.voteCount &&
+              video == other.video &&
+              voteAverage == other.voteAverage;
 
   @override
   int get hashCode =>

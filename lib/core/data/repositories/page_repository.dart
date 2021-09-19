@@ -1,12 +1,20 @@
 import 'package:injectable/injectable.dart';
 import 'package:kino/core/data/client/page_client.dart';
-import 'package:kino/core/data/models/popular_page.dart';
+import 'package:kino/core/data/models/section/section.dart';
 
 abstract class PageRepository {
 
   const PageRepository();
 
-  Future<PopularPage?> getPopularPage([int page = 1]);
+  Future<Section?> getPopularSection([int page = 1]);
+
+  Future<Section?> getTopSection([int page = 1]);
+
+  Future<Section?> getLatest([int page = 1]);
+
+  Future<Section?> getNowPlaying([int page = 1]);
+
+  Future<Section?> getUpcoming([int page = 1]);
 }
 
 @Singleton(as: PageRepository)
@@ -16,5 +24,17 @@ class PageRepositoryImpl extends PageRepository{
   const PageRepositoryImpl(this._client): super();
 
   @override
-  Future<PopularPage?> getPopularPage([int page = 1]) => _client.getPopularSection(page);
+  Future<Section?> getPopularSection([int page = 1]) => _client.getPopularSection(page);
+
+  @override
+  Future<Section?> getTopSection([int page = 1]) => _client.getTopSection(page);
+
+  @override
+  Future<Section?> getLatest([int page = 1]) => _client.getLatest(page);
+
+  @override
+  Future<Section?> getNowPlaying([int page = 1]) => _client.getNowPlaying(page);
+
+  @override
+  Future<Section?> getUpcoming([int page = 1]) => _client.getUpcoming(page);
 }
