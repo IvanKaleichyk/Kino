@@ -23,17 +23,18 @@ class Section {
   Map<String, dynamic> toJson() => _$SectionToJson(this);
 
   @override
-  String toString() => 'PopularPage{page: $page, results: $results, totalResults: $totalResults, totalPages: $totalPages}';
+  String toString() =>
+      'PopularPage{page: $page, results: $results, totalResults: $totalResults, totalPages: $totalPages}';
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Section &&
-              runtimeType == other.runtimeType &&
-              page == other.page &&
-              results == other.results &&
-              totalResults == other.totalResults &&
-              totalPages == other.totalPages;
+      other is Section &&
+          runtimeType == other.runtimeType &&
+          page == other.page &&
+          results == other.results &&
+          totalResults == other.totalResults &&
+          totalPages == other.totalPages;
 
   @override
   int get hashCode =>
@@ -77,7 +78,6 @@ class Movie {
 
   const Movie(
       this.posterPath,
-      this.adult,
       this.overview,
       this.releaseDate,
       this.genreIds,
@@ -88,36 +88,37 @@ class Movie {
       this.backdropPath,
       this.popularity,
       this.voteCount,
-      this.video,
-      this.voteAverage);
+      this.voteAverage,
+      {this.adult = false,
+      this.video = false});
 
-  factory Movie.fromJson(Map<String, dynamic> json) =>
-      _$MovieFromJson(json);
+  factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 
   Map<String, dynamic> toJson() => _$MovieToJson(this);
 
   @override
-  String toString() => 'PopularMovie{posterPath: $posterPath, adult: $adult, overview: $overview, releaseDate: $releaseDate, genreIds: $genreIds, id: $id, originalTitle: $originalTitle, originalLanguage: $originalLanguage, title: $title, backdropPath: $backdropPath, popularity: $popularity, voteCount: $voteCount, video: $video, voteAverage: $voteAverage}';
+  String toString() =>
+      'PopularMovie{posterPath: $posterPath, adult: $adult, overview: $overview, releaseDate: $releaseDate, genreIds: $genreIds, id: $id, originalTitle: $originalTitle, originalLanguage: $originalLanguage, title: $title, backdropPath: $backdropPath, popularity: $popularity, voteCount: $voteCount, video: $video, voteAverage: $voteAverage}';
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Movie &&
-              runtimeType == other.runtimeType &&
-              posterPath == other.posterPath &&
-              adult == other.adult &&
-              overview == other.overview &&
-              releaseDate == other.releaseDate &&
-              genreIds == other.genreIds &&
-              id == other.id &&
-              originalTitle == other.originalTitle &&
-              originalLanguage == other.originalLanguage &&
-              title == other.title &&
-              backdropPath == other.backdropPath &&
-              popularity == other.popularity &&
-              voteCount == other.voteCount &&
-              video == other.video &&
-              voteAverage == other.voteAverage;
+      other is Movie &&
+          runtimeType == other.runtimeType &&
+          posterPath == other.posterPath &&
+          adult == other.adult &&
+          overview == other.overview &&
+          releaseDate == other.releaseDate &&
+          genreIds == other.genreIds &&
+          id == other.id &&
+          originalTitle == other.originalTitle &&
+          originalLanguage == other.originalLanguage &&
+          title == other.title &&
+          backdropPath == other.backdropPath &&
+          popularity == other.popularity &&
+          voteCount == other.voteCount &&
+          video == other.video &&
+          voteAverage == other.voteAverage;
 
   @override
   int get hashCode =>
