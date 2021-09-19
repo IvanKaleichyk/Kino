@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:kino/core/data/client/page_client.dart';
+import 'package:kino/core/data/client/pageClient/page_client.dart';
 import 'package:kino/core/data/models/section/section.dart';
 
 abstract class PageRepository {

@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kino/core/data/client/client_data.dart';
-import 'package:kino/core/data/client/page_client.dart';
+import 'package:kino/core/data/client/movieClient/movie_client.dart';
+import 'package:kino/core/data/client/pageClient/page_client.dart';
 
 @module
 abstract class ClientModule {
@@ -24,4 +25,7 @@ abstract class ClientModule {
 
   @singleton
   PageClient providePageClient(Dio dio) => PageClient(dio);
+
+  @singleton
+  MovieClient provideMovieClient(Dio dio) => MovieClient(dio);
 }
