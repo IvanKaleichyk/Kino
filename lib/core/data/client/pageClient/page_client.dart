@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:kino/core/data/models/section/section.dart';
 import 'package:retrofit/http.dart';
 
-part 'page_client.g.dart';
+part "page_client.g.dart";
 
 @RestApi()
 abstract class PageClient{

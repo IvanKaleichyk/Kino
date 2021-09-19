@@ -24,7 +24,6 @@ Map<String, dynamic> _$SectionToJson(Section instance) => <String, dynamic>{
 
 Movie _$MovieFromJson(Map<String, dynamic> json) => Movie(
       json['poster_path'] as String?,
-      json['adult'] as bool,
       json['overview'] as String?,
       json['release_date'] as String?,
       (json['genre_ids'] as List<dynamic>?)?.map((e) => e as int).toList(),
@@ -35,8 +34,9 @@ Movie _$MovieFromJson(Map<String, dynamic> json) => Movie(
       json['backdrop_path'] as String?,
       (json['popularity'] as num?)?.toDouble(),
       json['vote_count'] as int?,
-      json['video'] as bool,
       (json['vote_average'] as num?)?.toDouble(),
+      adult: json['adult'] as bool? ?? false,
+      video: json['video'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$MovieToJson(Movie instance) => <String, dynamic>{
