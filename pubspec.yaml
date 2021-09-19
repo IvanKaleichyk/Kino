@@ -46,6 +46,7 @@ dependencies:
 dev_dependencies:
 # for generations
   build_runner: ^2.1.2
+  json_serializable: ^5.0.1
   injectable_generator: ^1.4.1
 
 # Retrofit
