@@ -22,7 +22,7 @@ class PostWatchlist{
   Map<String, dynamic> toJson() => _$PostWatchlistToJson(this);
 
   @override
-  String toString() => "PostWatchlist {mediaType: $mediaType, mediaId: $mediaId, favorite: $favorite}";
+  String toString() => "PostWatchlist {mediaType: $mediaType, mediaId: $mediaId, watchlist: $watchlist}";
 
   @override
   bool operator ==(Object other) =>
