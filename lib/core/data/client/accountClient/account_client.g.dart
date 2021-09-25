@@ -47,16 +47,18 @@ class _AccountClient implements AccountClient {
   }
 
   @override
-  Future<dynamic> addToFavorite(postMovie, accountId, sessionId) async {
+  Future<PostResponse> addToFavorite(postMovie, accountId, sessionId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'session_id': sessionId};
-    final _data = postMovie;
-    final _result = await _dio.fetch(_setStreamType<dynamic>(
-        Options(method: 'POST', headers: <String, dynamic>{}, extra: _extra)
-            .compose(_dio.options, '/account/$accountId/favorite',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data;
+    final _data = <String, dynamic>{};
+    _data.addAll(postMovie.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PostResponse>(
+            Options(method: 'POST', headers: <String, dynamic>{}, extra: _extra)
+                .compose(_dio.options, '/account/$accountId/favorite',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PostResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -79,17 +81,18 @@ class _AccountClient implements AccountClient {
   }
 
   @override
-  Future<dynamic> addToWatchlist(postMovie, accountId, sessionId) async {
+  Future<PostResponse> addToWatchlist(postMovie, accountId, sessionId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'session_id': sessionId};
     final _data = <String, dynamic>{};
     _data.addAll(postMovie.toJson());
-    final _result = await _dio.fetch(_setStreamType<dynamic>(
-        Options(method: 'POST', headers: <String, dynamic>{}, extra: _extra)
-            .compose(_dio.options, '/account/$accountId/watchlist',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PostResponse>(
+            Options(method: 'POST', headers: <String, dynamic>{}, extra: _extra)
+                .compose(_dio.options, '/account/$accountId/watchlist',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PostResponse.fromJson(_result.data!);
     return value;
   }
 
