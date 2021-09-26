@@ -5,7 +5,7 @@ part "image.g.dart";
 
 @immutable
 @JsonSerializable()
-class MovieImage {
+class TMDBImage {
   @JsonKey(name: "aspect_ratio")
   final double aspectRatio;
   @JsonKey(name: "file_path")
@@ -21,21 +21,21 @@ class MovieImage {
   @JsonKey(name: "width")
   final int width;
 
-  const MovieImage(this.aspectRatio, this.filePath, this.height, this.iso6391,
+  const TMDBImage(this.aspectRatio, this.filePath, this.height, this.iso6391,
       this.voteAverage, this.voteCount, this.width);
 
-  factory MovieImage.fromJson(Map<String, dynamic> json) => _$MovieImageFromJson(json);
+  factory TMDBImage.fromJson(Map<String, dynamic> json) => _$TMDBImageFromJson(json);
 
-  Map<String, dynamic> toJson() => _$MovieImageToJson(this);
+  Map<String, dynamic> toJson() => _$TMDBImageToJson(this);
 
   @override
   String toString() =>
-      "Image{aspectRatio: $aspectRatio, filePath: $filePath, height: $height, iso6391: $iso6391, voteAverage: $voteAverage, voteCount: $voteCount, width: $width}";
+      "TMDBImage{aspectRatio: $aspectRatio, filePath: $filePath, height: $height, iso6391: $iso6391, voteAverage: $voteAverage, voteCount: $voteCount, width: $width}";
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MovieImage &&
+      other is TMDBImage &&
           runtimeType == other.runtimeType &&
           aspectRatio == other.aspectRatio &&
           filePath == other.filePath &&

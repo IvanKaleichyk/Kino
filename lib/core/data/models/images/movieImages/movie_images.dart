@@ -11,9 +11,9 @@ class MovieImages {
   @JsonKey(name: "id")
   final int id;
   @JsonKey(name: "backdrops")
-  final List<MovieImage> backdrops;
+  final List<TMDBImage> backdrops;
   @JsonKey(name: "posters")
-  final List<MovieImage> posters;
+  final List<TMDBImage> posters;
 
   const MovieImages(this.id, this.backdrops, this.posters);
 
