@@ -5,6 +5,7 @@ import 'package:kino/core/data/client/client_data.dart';
 import 'package:kino/core/data/client/movieClient/movie_client.dart';
 import 'package:kino/core/data/client/pageClient/page_client.dart';
 import 'package:kino/core/data/client/peopleClient/people_client.dart';
+import 'package:kino/core/data/client/searchClient/search_client.dart';
 
 @module
 abstract class ClientModule {
@@ -17,6 +18,9 @@ abstract class ClientModule {
 
   @singleton
   AccountClient provideAccountClient(Dio dio) => AccountClient(dio);
+
+  @singleton
+  SearchClient provideSearchClient(Dio dio) => SearchClient(dio);
 
   @singleton
   PeopleClient providePeopleClient(Dio dio) => PeopleClient(dio);
