@@ -3,8 +3,8 @@ import 'package:kino/core/auth/data/client/auth_client.dart';
 import 'package:kino/core/auth/models/session/session_response.dart';
 import 'package:kino/core/auth/models/token/token_response.dart';
 
-abstract class AuthDataSource {
-  const AuthDataSource();
+abstract class AuthRepository {
+  const AuthRepository();
 
   Future<TokenResponse> createToken();
 
@@ -13,11 +13,11 @@ abstract class AuthDataSource {
   Future<SessionResponse> createSessionId();
 }
 
-@Singleton(as: AuthDataSource)
-class AuthDataSourceImpl extends AuthDataSource {
+@Singleton(as: AuthRepository)
+class AuthRepositoryImpl extends AuthRepository {
   final AuthClient _client;
 
-  const AuthDataSourceImpl(this._client) : super();
+  const AuthRepositoryImpl(this._client) : super();
 
   @override
   Future<SessionResponse> createSessionId() => _client.createSession();

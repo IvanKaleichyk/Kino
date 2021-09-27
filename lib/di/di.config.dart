@@ -8,7 +8,7 @@ import 'package:dio/dio.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../core/auth/data/auth_data_source.dart' as _i11;
+import '../core/auth/data/auth_repository.dart' as _i11;
 import '../core/auth/data/client/auth_client.dart' as _i10;
 import '../core/data/client/accountClient/account_client.dart' as _i9;
 import '../core/data/client/movieClient/movie_client.dart' as _i4;
@@ -42,8 +42,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.singleton<_i9.AccountClient>(
       clientModule.provideAccountClient(get<_i3.Dio>()));
   gh.singleton<_i10.AuthClient>(authModule.provideAuthClient(get<_i3.Dio>()));
-  gh.singleton<_i11.AuthDataSource>(
-      _i11.AuthDataSourceImpl(get<_i10.AuthClient>()));
+  gh.singleton<_i11.AuthRepository>(
+      _i11.AuthRepositoryImpl(get<_i10.AuthClient>()));
   return get;
 }
 
