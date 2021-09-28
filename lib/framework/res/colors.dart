@@ -7,6 +7,6 @@ class ColorsHexAssets {
   static const String WHITE = "#ffffff";
   static const String BLACK = "#000000";
 
-  static const String DESCRIPTION_TEXT_COLOR = "#BCB7C3";
-  static const String MAIN_TEXT_COLOR = "#ffffff";
+  static const String TEXT_COLOR = "#BCB7C3";
+  static const String TITLE_TEXT_COLOR = "#ffffff";
 }
