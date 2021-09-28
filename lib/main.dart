@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:kino/framework/extensions/image_extensions.dart';
-import 'package:kino/framework/res/images.dart';
+import 'package:kino/app.dart';
 
 import 'di/di.dart';
 
@@ -15,9 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: "Flutter Demo",
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: getDefaultThemeData(),
         home: TestPage(),
       );
 }
@@ -27,5 +24,5 @@ class TestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      Scaffold(body: getImage(ImagesAssets.APP_LOGO));
+      Scaffold(body: Center(child: Text("Hello world")));
 }
