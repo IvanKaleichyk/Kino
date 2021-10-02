@@ -1,12 +1,20 @@
-class ColorsHexAssets {
-  static const String PRIMARY = "#6644B8";
-  static const String SECONDARY = "#FF8FC6";
+import 'package:flutter/material.dart';
+import 'package:kino/framework/extensions/color_extensions.dart';
 
-  static const String BACKGROUND = "#6644B8";
+class ColorsRes extends Color{
 
-  static const String WHITE = "#ffffff";
-  static const String BLACK = "#000000";
+  ColorsRes(int color) : super(color);
 
-  static const String TEXT_COLOR = "#BCB7C3";
-  static const String TITLE_TEXT_COLOR = "#ffffff";
+  factory ColorsRes.primary() => getColor("#6644B8");
+  factory ColorsRes.secondary() => getColor("#FF8FC6");
+
+  factory ColorsRes.background() => getColor("#6644B8");
+
+  factory ColorsRes.white() => getColor("#ffffff");
+  factory ColorsRes.black() => getColor("#000000");
+
+  factory ColorsRes.textColor() => getColor("#BCB7C3");
+  factory ColorsRes.titleTextColor() => getColor("#ffffff");
+
+  factory ColorsRes.buttonBackground() => getColor("#6644B8");
 }
