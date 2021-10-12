@@ -20,7 +20,7 @@ class People {
   @JsonKey(name: "popularity")
   final double popularity;
 
-  People(this.profilePath, this.id, this.knownFor, this.name, this.popularity,
+  const People(this.profilePath, this.id, this.knownFor, this.name, this.popularity,
       {this.adult});
 
   factory People.fromJson(Map<String, dynamic> json) => _$PeopleFromJson(json);
