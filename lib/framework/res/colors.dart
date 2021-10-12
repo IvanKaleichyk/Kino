@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:kino/framework/extensions/color_extensions.dart';
 
 class ColorsRes extends Color{
 
   ColorsRes(int color) : super(color);
 
-  factory ColorsRes.primary() => getColor("#6644B8");
-  factory ColorsRes.secondary() => getColor("#FF8FC6");
+  static const Color PRIMARY = Color.fromRGBO(102, 68, 184, 1);
+  static const Color SECONDARY = Color.fromRGBO(255, 143, 198, 1);
 
-  factory ColorsRes.background() => getColor("#6644B8");
+  static const Color BACKGROUND = Color.fromRGBO(23, 8, 42, 1);
 
-  factory ColorsRes.white() => getColor("#ffffff");
-  factory ColorsRes.black() => getColor("#000000");
+  static const Color WHITE = Color.fromRGBO(255, 255, 255, 1);
+  static const Color BLACK = Color.fromRGBO(0, 0, 0, 1);
 
-  factory ColorsRes.textColor() => getColor("#BCB7C3");
-  factory ColorsRes.titleTextColor() => getColor("#ffffff");
+  static const Color TEXT_COLOR = Color.fromRGBO(188, 183, 195, 1);
+  static const Color TITLE_TEXT_COLOR = Color.fromRGBO(255, 255, 255, 1);
 
-  factory ColorsRes.buttonBackground() => getColor("#6644B8");
+  static const Color BUTTON_BACKGROUND = Color.fromRGBO(102, 68, 184, 1);
 }
