@@ -44,6 +44,12 @@ class InfoText extends RichText {
             key: key);
 }
 
+TextStyle getDefaultTextStyle({Color color = ColorsRes.TEXT_COLOR}) =>
+    TextStyle(
+        fontFamily: Font.ROBOT, fontSize: Dimens.BASE_TEXT_SIZE, color: color);
+
 TextStyle getInfoTextStyle(Color? textColor,
         {double textSize = Dimens.INFO_TEXT_SIZE}) =>
     TextStyle(color: textColor);
+
+TextStyle getDefaultHintStyle() => getDefaultTextStyle();

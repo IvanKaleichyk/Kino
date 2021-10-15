@@ -1,5 +1,7 @@
 {
   "app_name": "Kino",
   "app_description": "Thanks for kino service you can discovery the world of movies, find out the biography of your favorite Actors",
-  "get_start": "Get start"
+  "get_start": "Get start",
+  "welcome_text": "Hello, what do you want to watch?",
+  "search": "Search"
 }
