@@ -1,4 +1,4 @@
-import 'package:easy_localization/src/public_ext.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:kino/framework/res/colors.dart';
 import 'package:kino/framework/res/string_key.dart';
@@ -57,7 +57,7 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         decoration: BoxDecoration(
           color: ColorsRes.BACKGROUND,
-          boxShadow: const [
+          boxShadow: const <BoxShadow>[
             BoxShadow()
           ],
           borderRadius: BorderRadius.only(
