@@ -3,6 +3,8 @@ import 'package:kino/navigation/app_route.gr.dart';
 
 abstract class StartNavigator {
   void moveToAuthentication();
+
+  void moveToHome();
 }
 
 @Injectable(as: StartNavigator)
@@ -14,5 +16,10 @@ class StartNavigatorImpl extends StartNavigator {
   @override
   void moveToAuthentication() {
     router.navigate(const AuthRoute());
+  }
+
+  @override
+  void moveToHome() {
+    router.navigate(const HomeRoute());
   }
 }

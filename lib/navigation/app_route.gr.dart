@@ -13,7 +13,7 @@ import 'package:flutter/material.dart' as _i5;
 
 import '../framework/fragments/auth/tmdb/ui/auth_tmdb_screen.dart' as _i3;
 import '../framework/fragments/home/home_screen.dart' as _i1;
-import '../framework/fragments/start/start_screen.dart' as _i2;
+import '../framework/fragments/start/ui/start_screen.dart' as _i2;
 
 class AppRouter extends _i4.RootStackRouter {
   AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])

@@ -26,7 +26,8 @@ class AuthTmdbBloc extends Bloc<AuthTmdbEvent, AuthTmdbState> {
   }
 
   void mapAuthTmdbEventAuthSuccessfulToState(
-      AuthTmdbEventAuthSuccessful event, Emitter<AuthTmdbState> emit) {
+      AuthTmdbEventAuthSuccessful event, Emitter<AuthTmdbState> emit) async {
+    _interactor.createSession();
     navigator.moveToHome();
   }
 

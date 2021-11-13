@@ -3,6 +3,20 @@
 part of 'auth_client.dart';
 
 // **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+CreateSessionBody _$CreateSessionBodyFromJson(Map<String, dynamic> json) =>
+    CreateSessionBody(
+      json['request_token'] as String,
+    );
+
+Map<String, dynamic> _$CreateSessionBodyToJson(CreateSessionBody instance) =>
+    <String, dynamic>{
+      'request_token': instance.token,
+    };
+
+// **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
 
@@ -30,14 +44,15 @@ class _AuthClient implements AuthClient {
   }
 
   @override
-  Future<SessionResponse> createSession() async {
+  Future<SessionResponse> createSession(requestToken) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
+    _data.addAll(requestToken.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<SessionResponse>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
+            Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/authentication/session/new',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));

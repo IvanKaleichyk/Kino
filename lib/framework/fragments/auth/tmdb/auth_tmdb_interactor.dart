@@ -17,13 +17,15 @@ class AuthTmdbInteractor {
   }
 
   AuthUrlState handleUrl(String url) {
-    if (url.endsWith(ALLOW))
+    if (url.endsWith(ALLOW)) {
       return AuthUrlState.allow;
-    else if (url.endsWith(DENY))
+    } else if (url.endsWith(DENY))
       return AuthUrlState.deny;
     else
       return AuthUrlState.other;
   }
+
+  void createSession() => _repository.createSessionId();
 }
 
 enum AuthUrlState { allow, deny, other }
