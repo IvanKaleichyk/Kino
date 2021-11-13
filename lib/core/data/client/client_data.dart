@@ -1,5 +1,6 @@
 class ClientData{
 
+  static const String BASE_URL = "https://www.themoviedb.org";
   static const String BASE_URL_VERSION_3 = "https://api.themoviedb.org/3";
   static const String BASE_URL_VERSION_4 = "https://api.themoviedb.org/4";
 

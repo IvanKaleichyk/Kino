@@ -34,7 +34,7 @@ class SearchRow extends StatelessWidget {
                   cursorColor: ColorsRes.WHITE,
                   textInputAction: TextInputAction.search,
                   decoration:
-                      getTransparentInputDecoration(hint: StringKey.SEARCH),
+                      getTransparentInputDecoration(hint: StringRes.SEARCH),
                   style: getDefaultTextStyle(color: ColorsRes.WHITE),
                 ),
               ),

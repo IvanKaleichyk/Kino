@@ -15,13 +15,12 @@ class Button extends ElevatedButton {
 }
 
 ButtonStyle getBaseButtonStyle() => ElevatedButton.styleFrom(
-    shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
-    primary: ColorsRes.BUTTON_BACKGROUND,
-    fixedSize: const Size(200, 50),
-    textStyle: const BaseButtonTextStyle());
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      primary: ColorsRes.BUTTON_BACKGROUND,
+      fixedSize: const Size(200, 50),
+      textStyle: getBaseButtonTextStyle(),
+    );
 
-class BaseButtonTextStyle extends TextStyle {
-  const BaseButtonTextStyle()
-      : super(fontWeight: Font.MEDIUM, fontSize: Dimens.BUTTON_TEXT_SIZE);
-}
+TextStyle getBaseButtonTextStyle() =>
+    const TextStyle(fontWeight: Font.MEDIUM, fontSize: Dimens.BUTTON_TEXT_SIZE);

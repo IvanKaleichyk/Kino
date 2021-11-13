@@ -1,10 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:kino/di/di.dart';
 import 'package:kino/framework/extensions/image_extensions.dart';
 import 'package:kino/framework/res/images.dart';
 import 'package:kino/framework/res/string_key.dart';
 import 'package:kino/framework/widgets/button.dart';
+import 'package:kino/framework/widgets/dialog.dart';
 import 'package:kino/framework/widgets/text.dart';
+
+import 'navigator/start_navigator.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -50,9 +54,9 @@ class AppDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: <Widget>[
-          TitleText(StringKey.APP_NAME.tr(), fontSize: 32),
+          TitleText(StringRes.APP_NAME.tr(), fontSize: 32),
           const SizedBox(height: 5),
-          Text(StringKey.APP_DESCRIPTION.tr(), textAlign: TextAlign.center)
+          Text(StringRes.APP_DESCRIPTION.tr(), textAlign: TextAlign.center)
         ],
       );
 }
@@ -60,7 +64,9 @@ class AppDescription extends StatelessWidget {
 class _Footer extends StatelessWidget {
   const _Footer({Key? key}) : super(key: key);
 
-  void goToAuthPage() {}
+  void _goToAuthPage() {
+    getIt<StartNavigator>().moveToAuthentication();
+  }
 
   @override
   Widget build(BuildContext context) => Expanded(
@@ -71,7 +77,8 @@ class _Footer extends StatelessWidget {
             height: 100,
             child: Column(
               children: <Widget>[
-                Button(goToAuthPage, Text(StringKey.GET_START.tr())),
+                Button(() => _showWelcomeDialog(context),
+                    Text(StringRes.GET_START.tr())),
                 const SizedBox(height: 7),
                 InfoText("Read the", mainText: "Terms of Uses")
               ],
@@ -79,4 +86,21 @@ class _Footer extends StatelessWidget {
           ),
         ),
       );
+
+  void _showWelcomeDialog(BuildContext context) {
+    final String title = StringRes.DIALOG_WELCOME_TITLE.tr();
+    final String body = StringRes.DIALOG_WELCOME_INFO.tr();
+    getDialog(
+        context,
+        BaseAlertDialog(
+          title: title,
+          body: body,
+          onPositiveTapAction: () => _closeDialogAndGoToAuthPage(context),
+        ));
+  }
+
+  void _closeDialogAndGoToAuthPage(BuildContext context) {
+    Navigator.of(context).pop();
+    _goToAuthPage();
+  }
 }

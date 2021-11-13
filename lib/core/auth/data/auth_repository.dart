@@ -2,6 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kino/core/auth/data/client/auth_client.dart';
 import 'package:kino/core/auth/models/session/session_response.dart';
 import 'package:kino/core/auth/models/token/token_response.dart';
+import 'package:kino/core/data/client/client_data.dart';
 
 abstract class AuthRepository {
   const AuthRepository();
@@ -26,6 +27,6 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<TokenResponse> createToken() => _client.createToken();
 
   @override
-  String getUrlAuthMVDBPage(String token) =>
-      "https://www.themoviedb.org/authenticate/$token";
+  String getUrlAuthMVDBPage(String? token) =>
+      "${ClientData.BASE_URL}/authenticate/$token";
 }
