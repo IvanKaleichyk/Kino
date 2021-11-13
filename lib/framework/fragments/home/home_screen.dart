@@ -39,7 +39,7 @@ class _Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             TitleText(
-              StringKey.WELCOME_TEXT.tr(),
+              StringRes.WELCOME_TEXT.tr(),
               fontSize: 32,
             ),
             const SearchRow()
@@ -57,9 +57,7 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         decoration: BoxDecoration(
           color: ColorsRes.BACKGROUND,
-          boxShadow: const <BoxShadow>[
-            BoxShadow()
-          ],
+          boxShadow: const <BoxShadow>[BoxShadow()],
           borderRadius: BorderRadius.only(
               topLeft: getTopRadius(), topRight: getTopRadius()),
         ),

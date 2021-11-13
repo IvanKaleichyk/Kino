@@ -5,6 +5,7 @@ analyzer:
       build/**,
       lib/**.g.dart,
       lib/**.config.dart,
+      lib/**.gr.dart
   ]
   language:
     strict-raw-types: true
@@ -14,10 +15,19 @@ analyzer:
 
 linter:
   rules:
+    #   Disabled
+    constant_identifier_names: false
+    no_logic_in_create_state: false
+    curly_braces_in_flow_control_structures: false
+    one_member_abstracts: false
+    parameter_assignments: false
+    diagnostic_describe_all_properties: false
+    always_specify_types: false
+
+    #   Enable
     always_declare_return_types: true
     cancel_subscriptions: true
     close_sinks: true
-    one_member_abstracts: true
     only_throw_errors: true
     sort_child_properties_last: true
     avoid_dynamic_calls: true
@@ -28,7 +38,6 @@ linter:
     avoid_web_libraries_in_flutter: true
     control_flow_in_finally: true
     hash_and_equals: true
-    diagnostic_describe_all_properties: true
     empty_statements: true
     invariant_booleans: true
     iterable_contains_unrelated_type: true
@@ -40,7 +49,6 @@ linter:
     unsafe_html: true
     use_build_context_synchronously: true
     use_key_in_widget_constructors: true
-    always_specify_types: true
     avoid_bool_literals_in_conditional_expressions: true
     avoid_equals_and_hash_code_on_mutable_classes: true
     avoid_escaping_inner_quotes: true
@@ -49,7 +57,7 @@ linter:
     avoid_multiple_declarations_per_line: true
     avoid_positional_boolean_parameters: true
     flutter_style_todos: true
-    parameter_assignments: false
+
     prefer_expression_function_bodies: true
     prefer_final_locals: true
     prefer_foreach: true
@@ -63,6 +71,3 @@ linter:
     use_string_buffers: true
     use_is_even_rather_than_modulo: true
     use_named_constants: true
-
-    # Disabled
-    constant_identifier_names: false
