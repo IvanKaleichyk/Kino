@@ -3,5 +3,11 @@
   "app_description": "Thanks for kino service you can discovery the world of movies, find out the biography of your favorite Actors",
   "get_start": "Get start",
   "welcome_text": "Hello, what do you want to watch?",
-  "search": "Search"
+  "search": "Search",
+  "cancel": "Cancel",
+  "ok": "ok",
+  "dialog_welcome_title": "Welcome to Kino",
+  "dialog_welcome_info": "Since this application uses api tmdb, you must register or log in at the tmdb",
+  "dialog_not_get_access_title": "Kino needs access",
+  "dialog_not_get_access_info": "to start using the application, you must provide access to your account data"
 }
